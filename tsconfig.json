@@ -99,6 +99,7 @@
     "module": "nodenext",
     "target": "esnext",
     "types": [],
+    "moduleResolution": "nodenext",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -127,10 +128,12 @@
     "skipLibCheck": true,
   },
   "include": [
-    "src"
+    "src",
+    "lib"
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "generated/prisma"
   ]
 }
