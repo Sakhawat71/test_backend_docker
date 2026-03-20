@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "node dist/server.js",
-    "nodemon": "nodemon dist/server.js",
+    "dev": "node dist/src/server.js",
+    "nodemon": "nodemon dist/src/server.js",
     "tsdev": "tsnd --respawn src/server.ts",
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
