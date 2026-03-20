@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "node dist/server.js",
-    "nodedev": "nodemon dist/server.js",
+    "nodemon": "nodemon dist/server.js",
     "tsdev": "tsnd --respawn src/server.ts",
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -7,17 +7,30 @@ const app: Application = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Health check route
 app.get('/', (req, res) => {
     res.send('Server is running 🚀');
 });
 
-app.get('/user', (req, res) => {
+// Health Check
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "ok",
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString(),
+    });
+});
 
-    // const data = prisma.user.findMany();
-    // const data = prisma.profile.findMany();
+// test 
 
-    res.send('find him');
-})
+app.get("/test", async (req, res) => {
+    try {
+        const users = await prisma.user.findMany();
+        res.json(users);
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
 
 export default app;
